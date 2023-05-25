@@ -1,0 +1,21 @@
+img{
+    border-radius: 50%;
+   
+}
+
+.td1{
+    background-image: url(https://th.bing.com/th/id/OIP.hjMQ3oH4mGheCE3Upk7fWAHaFP?pid=ImgDet&rs=1);
+    border-radius: 90%;
+    animation-name: example;
+    animation-duration: 8s;
+}
+
+b{
+    color: white;
+}
+
+button{
+    background-image: url(https://cdn.wallpapersafari.com/4/15/myFdH1.jpg);
+    border-radius: 20px;
+}
+
