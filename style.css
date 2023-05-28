@@ -1,6 +1,9 @@
 img{
     border-radius: 50%;
-   
+}
+
+.name{
+    color:black ;
 }
 
 .td1{
@@ -15,7 +18,16 @@ b{
 }
 
 button{
-    background-image: url(https://cdn.wallpapersafari.com/4/15/myFdH1.jpg);
+    /* background-image: url(https://cdn.wallpapersafari.com/4/15/myFdH1.jpg); */
     border-radius: 20px;
+    background-color:rgb(255, 145, 0);
+    color: white;
+    width:80px;
+  
+}
+
+button:hover{
+    background-color: white;
+    color:rgb(255, 145, 0);
 }
 

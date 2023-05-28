@@ -7,6 +7,7 @@
 		"width=device-width, initial-scale=1.0">
 	<title>HTML Project</title>
 	<link rel="stylesheet" href="./style.css">
+	
 	<style> 
 		div{
 		 width: 100px;
@@ -16,12 +17,102 @@
 		 animation-duration: 4s;
 	   }
 	   
-	   @keyframes example {
+@keyframes example {
 		 from {    background-image: url(https://wallpapercave.com/wp/wp2698888.jpg);
 }
 		 to {    background-image: url(https://th.bing.com/th/id/OIP.IsSZkilh78lqu9cWi935GAHaEK?pid=ImgDet&rs=1);
 }
 	   }
+
+img {
+	font-family: Raleway, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 1rem;
+	background-color: rgba(10, 12, 18, 1);
+	color: white;
+	/* min-height: 100vh; */
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+.wrapper {
+	min-width: min(0rem, 100%);
+}
+
+.box {
+	font-size: 3vw;
+	margin: max(1rem, 3vw);
+	border: 0.35rem solid;
+	/* padding: 3vw; */
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+} 
 	   </style>
 </head>
 
@@ -41,9 +132,9 @@
 						</td>
 						<td class="td1">
 							<font face="ARIAL" size="5" color=black onMouseOver="this.style.color='black'"
-							onMouseOut="this.style.color='black'"  background-color: black;>
+							onMouseOut="this.style.color='black'" background-color: black;>
 						
-								<b>VIPIN KURIAKOSE SUNNY</b>
+								<b class="name">VIPIN KURIAKOSE SUNNY</b>
 							</font>
 						</td>
 						<td width="15%">
@@ -160,9 +251,10 @@
 					<tr>
 						
 						<td height="180" width="100%"  align="center"
-							valign="middle" colspan="2"><img src="./images/IMG_7042.JPG" alt=""  height=200 width=200;/><br><br>
+							valign="middle" colspan="2"><img class="box" src="./images/IMG_7042.JPG" alt=""  height=200 width=200;/><br><br>
 							<font face="Verdana" size="7"
-								color="white"  >
+								color="white" onMouseOver="this.style.color='blue'"
+								onMouseOut="this.style.color='white'" >
 								About Me
 							</font>
 							<hr color="white" width="90">
@@ -176,7 +268,8 @@
 
 						<td width="60%">
 							<font face="Verdana" size="4"
-								color="white">
+								color="white" onMouseOver="this.style.color='green'"
+								onMouseOut="this.style.color='white'">
 								I am describing
 								a quick story of me.
 								<hr color="white">
@@ -226,10 +319,11 @@
 						<td height="180" align="center"
 							valign="middle" colspan="2">
 							<font face="Verdana" size="7"
-								color="black">
+								color="black" onMouseOver="this.style.color='red'"
+								onMouseOut="this.style.color='black'">
 								Projects
 							</font>
-							<hr color="black" width="90">
+							<hr color="black"  width="90">
 						</td>
 					</tr>
 
@@ -240,7 +334,8 @@
 								<ul>
 									<li>
 										<hr color="black">
-										<a href="http://vipinsunny.github.io/Resumeofvipin/" style="text-decoration:none" >
+										<a href="http://vipinsunny.github.io/Resumeofvipin/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'" >
 											 Resume of Vipin
 										</a>
 									</li>
@@ -248,21 +343,24 @@
 									
 									<li>
 										<hr color="black">
-										<a href="https://bank-app-c2933b.netlify.app" style="text-decoration:none">
+										<a href="https://bank-app-c2933b.netlify.app" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Bank App Using Angular
 										</a>
 									</li>
 									
 									<li>
 										<hr color="black">
-										<a href="https://restaurant-app-122180.netlify.app/" style="text-decoration:none">
+										<a href="https://restaurant-app-122180.netlify.app/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Restaurant App Using React
 										</a>
 									</li>
 									
 									<li>
 										<hr color="black">
-										<a href="https://netflix-app-87123d.netlify.app/" style="text-decoration:none">
+										<a href="https://netflix-app-87123d.netlify.app/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Netflix App Using React
 										</a>
 									</li>
@@ -271,7 +369,8 @@
 										<hr color="black">
 										
 										<a href="https://vipinsunny.github.io/coffeeloversproject/" style="text-decoration:none"
-											color="white">
+											color="white" onMouseOver="this.style.color='blue'"
+											onMouseOut="this.style.color='black'">
 											 Coffee Lovers Project
 										</a>
 									</li>
@@ -279,7 +378,8 @@
 									<li>
 										<hr color="black">
 										
-										<a href="https://vipinsunny.github.io/myrestaurant/" style="text-decoration:none">
+										<a href="https://vipinsunny.github.io/myrestaurant/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 My Restaurant
 										</a>
 									</li>
@@ -287,7 +387,8 @@
 									<li>
 										<hr color="black">
 										
-										<a href="https://vipinsunny.github.io/calculator/" style="text-decoration:none">
+										<a href="https://vipinsunny.github.io/calculator/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Calculator
 										</a>
 									</li>
@@ -295,7 +396,8 @@
 									<li>
 										<hr color="black">
 										
-										<a href="https://vipinsunny.github.io/getcountries3/" style="text-decoration:none">
+										<a href="https://vipinsunny.github.io/getcountries3/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Get Countries
 										</a>
 									</li>
@@ -303,14 +405,16 @@
 									<li>
 										<hr color="black">
 										
-										<a href="https://vipinsunny.github.io/Weather/" style="text-decoration:none">
+										<a href="https://vipinsunny.github.io/Weather/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'">
 											 Weather
 										</a>
 									</li>
 
 									<li>
 										<hr color="black">
-										<a href="https://vipinsunny.github.io/Getmovies/" style="text-decoration:none">
+										<a href="https://vipinsunny.github.io/Getmovies/" style="text-decoration:none" onMouseOver="this.style.color='blue'"
+										onMouseOut="this.style.color='black'"	>
 											 Get Movies
 										</a>
 									</li>
@@ -389,16 +493,18 @@
 					cellspacing="0" width="80%" align="center">
 					<tr>
 						<td height="180" align="center" valign="middle">
-							<font face="Verdana" size="7" color="white">
+							<font face="Verdana" size="7" color="white" onMouseOver="this.style.color='orange'"
+							onMouseOut="this.style.color='white'">
 								Achievements
-								<hr color="white" width="100">
+								<hr color="white" width="100" >
 							</font>
 						</td>
 					</tr>
 
 					<tr>
 						<td>
-							<font face="Verdana" size="4" color="white">
+							<font face="Verdana" size="4" color="white" onMouseOver="this.style.color='cyan'"
+							onMouseOut="this.style.color='white'">
 								<ul>
 									<li>
 										<b>Intern at Luminar Technolab, Kochi.</b>
@@ -464,16 +570,17 @@
 
 	<!--Contact(start)-->
 	<table id="contact" border="0" width="1500" style="background-image: url(https://wallpapercave.com/wp/wp3016606.jpg);"
-		cellpadding="0" cellspacing="0" bgcolor="white">
+		cellpadding="0" cellspacing="0" bgcolor="white" >
 		<tr>
 			<td>
-				<table border="0" cellpadding="15"
+				<table class="contact" border="0" cellpadding="15"
 					cellspacing="0" width="80%" align="center">
 					<tr>
 						<td height="180" align="center"
 							valign="middle" colspan="2">
 							<font face="Verdana" size="7"
-								color="white">
+								color="white" onMouseOver="this.style.color='purple'"
+								onMouseOut="this.style.color='white'">
 								Contact
 							</font>
 							<hr color="white" width="90">
@@ -483,7 +590,7 @@
 					<tr>
 						<td align="center" valign="top">
 							<table border="0" width="50%" cellpadding="15"
-								cellspacing="0" align="center" bgcolor="white">
+								cellspacing="0" align="center" bgcolor="white" >
 								<tr>
 									<td width="30%">
 										<hr color="white">
@@ -550,7 +657,7 @@
 									<td width="70%">
 										<button type="Submit">
 											<font face="Verdana"
-												size="4" color="black">
+												size="2"  >
 												<h4>Submit</h4>
 											</font>
 										</button>
