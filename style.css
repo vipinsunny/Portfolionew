@@ -39,6 +39,19 @@ b{
     color: white;
 }
 
+b:hover{
+    color: orangered;
+}
+
+i{
+    color: white;
+    margin-right: 120px;
+}
+
+i:hover{
+    color: orangered;
+}
+
 button{
     /* background-image: url(https://cdn.wallpapersafari.com/4/15/myFdH1.jpg); */
     border-radius: 20px;
